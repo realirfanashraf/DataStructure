@@ -75,6 +75,29 @@ class LinkedList {
     
         this.length++;
     }
-    
 
+    removeFrom(index) {
+        if (index < 0 || index >= this.length) {
+            return "Invalid Index";
+        }
+    
+        let removeNode;
+        if (index === 0) {
+            removeNode = this.head;
+            this.head = removeNode.next;
+        } else {
+            let curr = this.head;
+            for (let i = 0; i < index - 1; i++) {
+                curr = curr.next;
+            }
+            removeNode = curr.next;
+            curr.next = removeNode.next;
+        }
+        
+        this.length--;
+        return removeNode.value;
+    }
+   
+    
+    
 }
