@@ -97,6 +97,15 @@ class LinkedList {
         this.length--;
         return removeNode.value;
     }
+
+    removeValue(value){
+            if(this.isEmpty()){
+                return null
+            }else{
+                let curr = this.head
+                while(curr.value)
+            }
+    }
    
     
     
