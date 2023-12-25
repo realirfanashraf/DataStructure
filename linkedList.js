@@ -98,15 +98,30 @@ class LinkedList {
         return removeNode.value;
     }
 
-    removeValue(value){
-            if(this.isEmpty()){
-                return null
-            }else{
-                let curr = this.head
-                while(curr.value)
-            }
-    }
-   
+    removeValue(value) {
+        if (this.isEmpty()) {
+            return "Value not Found";
+        }
     
+        if (this.head.value === value) {
+            this.head = this.head.next;
+            this.length -= 1;
+            return "Value removed";
+        } else {
+            let curr = this.head;
+            let removeNode;
+            while (curr.next && curr.next.value !== value) {
+                curr = curr.next;
+            }
+            if (curr.next) {
+                removeNode = curr.next;
+                curr.next = removeNode.next;
+                this.length -= 1;
+                return "Value removed";
+            }
+        }
+    
+        return "Value not Found";
+    }
     
 }
