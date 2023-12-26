@@ -1,15 +1,15 @@
 const LinkedList = require('./linkedListWithTail.js')
 
-class LinkedListStack{
+class LinkedListQueue{
     constructor(){
         this.list = new LinkedList()
     }
 
-    push(value){
-        this.list.prepend(value)
+    enqueue(value){
+        this.list.append(value)
     }
 
-    pop(){
+    dequeue(){
         return this.list.removeFromFront()
     }
 
@@ -25,4 +25,5 @@ class LinkedListStack{
         return this.list.print()
     }
 }
+
 
