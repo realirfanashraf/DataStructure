@@ -141,5 +141,22 @@ class LinkedList {
     
         return -1;
     }
+
+    reverse(){
+        if(this.isEmpty()){
+            return "List is empty"
+        }else{
+            let prev = null
+            let curr = this.head
+            while(curr){
+                let next = curr.next
+                curr.next = prev
+                prev = curr
+                curr = next
+            }
+            this.head = prev
+        }
+        return "List reversed";
+    }
     
 }
