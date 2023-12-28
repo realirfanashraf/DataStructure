@@ -53,5 +53,29 @@ class BinarySearchTree{
             }
         }
     }
+
+    preOrder(root){
+        if(root){
+            console.log(root.value)
+            this.preOrder(root.left)
+            this.preOrder(root.right)
+        }
+    }
+
+    inOrder(root){
+        if(root){
+            this.inOrder(root.left)
+            console.log(root.value)
+            this.inOrder(root.right)
+        }
+    }
+
+    postOrder(root){
+        if(root){
+            this.inOrder(root.left)
+            this.inOrder(root.right)
+            console.log(root.value)
+        }
+    }
     
 }
