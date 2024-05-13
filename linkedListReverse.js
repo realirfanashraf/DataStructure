@@ -54,6 +54,7 @@ class LinkedList{
             console.log(listValues);
         }
     }
+
 }
 
 let list = new LinkedList()
