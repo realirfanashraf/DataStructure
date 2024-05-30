@@ -123,7 +123,7 @@ class BinarySearchTree {
         if (root === null) {
             return null;
         }
-
+        
         if (value < root.value) {
             root.left = this.deleteNode(root.left, value);
         } else if (value > root.value) {
