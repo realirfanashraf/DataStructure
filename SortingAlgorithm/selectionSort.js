@@ -1,16 +1,23 @@
-const arr = [4,2,6,7,3,2,1]
-
-function selectionSort(arr){
-   for(let i = 1 ; i < arr.length ; i++){
-    let curr = arr[i]
-    let j = i-1
-    while(j>=0 && arr[j]>curr){
-        arr[j+1] = arr[j]
-        j--
+function selectionSort(arr) {
+    let n = arr.length;
+    
+    for (let i = 0; i < n - 1; i++) {
+        let minIndex = i;
+        for (let j = i + 1; j < n; j++) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+        
+        if (minIndex !== i) {
+            let temp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = temp;
+        }
     }
-    arr[j+1] = curr
-   }
+    
+    return arr;
 }
 
-selectionSort(arr)
-console.log(arr)
+let arr = [5, 2, 9, 1, 5, 6];
+console.log(selectionSort(arr)); 

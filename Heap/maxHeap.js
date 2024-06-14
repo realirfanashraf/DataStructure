@@ -79,12 +79,11 @@ class MaxHeap {
       }
 
       this.heap = originalHeap;
-
-      return result.reverse();
+      return result.reverse()
     }
   }
   
-  
+
   const maxHeap = new MaxHeap();
   const elements = [10, 20, 5, 30, 15];
   elements.forEach(element => maxHeap.insert(element));
